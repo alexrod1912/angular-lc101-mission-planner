@@ -1,7 +1,12 @@
 <h3>Equipment</h3>
 <ul>
-  <li>Habitat dome</li>
-  <li>Drones</li>
-  <li>Food containers</li>
-  <li>Oxygen tanks</li>
+  <li *ngFor = "let equiptment of equipmentItems"><button (click)="selected = equiptment"(click)="addItem(selected)"> Add to cargo hold</button>{{equiptment.name}}, {{equiptment.mass}}</li>
+  
 </ul>
+<hr>
+<h3>Items in cargo hold:</h3>
+<ul>
+  <li *ngFor = "let item of cargoHold">{{item.name}}</li>
+</ul>
+<p>Mass in hold:{{cargoMass}} </p>
+<p>Mass budget remaining</p>
